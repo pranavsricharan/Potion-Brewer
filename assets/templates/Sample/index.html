@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>{sitename} | {title}</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+		</style> 
+		<link rel="stylesheet" type="text/css" href="{static css/style.css}" />
+	</head>
+	
+	<body>
+		<div class="header">
+			<h3>Potion <span>Brewer</span></h3>
+			<ul>
+				<a href="?page=home"><li>Home</li></a>
+				<a href="?page=usage"><li>Usage</li></a>
+				<a href="?page=page1"><li>Page 1</li></a>
+				<a href="?page=page2"><li>Page 2</li></a>
+			</ul>
+		</div>
+		<div class="cover">
+			<h3>{heading}</h3>
+			<p>{coverData}</h3>
+		</div>
+		<div class="wrapper">
+			<div class="main">
+				<h3>{title}</h3>
+				{mainData}
+			</div>
+			<div class="right">
+				{sidebar}
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="footer">
+			&copy; 2016 {sitename}.<br />
+			{footer}
+		</div>
+	</body>
+</html>
