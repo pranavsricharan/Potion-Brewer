@@ -5,6 +5,15 @@ class Potion
 	public function __construct($path,$data=array())
 	{
 		$this->path = $path; // Path to template file
+		
+		/*
+		**
+		** Set the default path to the directory containing static file
+		** setStaticDir(PATH_TO_DIR) method can be called from the main template object also to change the static directory
+		**
+		*/
+		$this->setStaticDir("assets/static");
+		
 		/*
 		**
 		** The data is passed as an associative array
@@ -12,12 +21,22 @@ class Potion
 		** For instance, the value at $data['title'] can be accessed in the template as {title} anywhere on the whole page
 		**
 		*/
+		
 		$this->data = $data; // Data to be rendered on view
 	}
 	// Method to add values to the data array
 	public function set($key,$value)
 	{
 		$this->data[$key] = $value;
+	}
+	
+	// Set path to static directory
+	public function setStaticDir($path)
+	{
+		// Add a trailing slash to the end if the path doesn't end with a '/'
+		if(strrpos($path,"/") != strlen($path) - 1)
+			$path .= '/';
+		$this->staticDir = $path; // Set static path
 	}
 	
 	// The main callable function to render the template
@@ -46,7 +65,7 @@ class Potion
 		// Map all the potion static files to actual path
 		for($i=0;$i<sizeof($matches[1]);$i++)
 		{
-			$this->fileData = preg_replace("(" . $matches[0][$i] . ")","assets/static/".$matches[1][$i],$this->fileData);//Replace the potion variable with actual path to file
+			$this->fileData = preg_replace("(" . $matches[0][$i] . ")",$this->staticDir . $matches[1][$i],$this->fileData);//Replace the potion variable with actual path to file
 		}
 	}
 	

@@ -22,9 +22,9 @@ else
 if($page == "home")
 {
 	
-	$template->set('mainData',"Welcome to the sample site of potion brewer. Check the usage page on how to use this template engine.");
+	$template->set('mainData',"Welcome to the sample site of potion brewer. Check the <a href='?page=usage'>usage</a> page on how to use this template engine.");
 }
-elseif($page == "usage")
+elseif($page == "documentation")
 {
 	$template->set('mainData',file_get_contents("usage.html"));
 }

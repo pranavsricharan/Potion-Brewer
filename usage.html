@@ -9,19 +9,35 @@
 	Example:<br />
 	<div class="code">
 		$template = new Potion(PATH_TO_TEMPLATE);<br />
-		$template->set("title","My page title");
+		$template->set("title","My page title");<br />
+		$template->set("sitename","My website");
 	</div>
 	</dd>
 	<dt>Accessing data</dt>
 	<dd>The data present in the variables can accessed by specifying the variable name within a pair of braces.<br />
 	<div class="code">
-		&lt;title&gt;{title}&lt;/title&gt;
+		&lt;html&gt;<br />
+	<div class="tab">&lt;head&gt;<br />
+		<div class="tab">&lt;title&gt; <span class="var">&#123;title&#125;</span> &lt;/title&gt;</div>
+	&lt;/head&gt;
+	</div>
+	<div class="tab">
+	&lt;body&gt;<br />
+		<div class="tab">&lt;h3&gt;Welcome to <span class="var">&#123;sitename&#125;</span>&lt;/h3&gt;</div>
+	&lt;/body&gt;<br />
+	</div>
+&lt;/html&gt;
 	</div>
 	</dd>
 	<dt>Static files</dt>
 	<dd>Static files such as images, scripts and css can be included using the static keyword.<br />
 	<div class="code">
-		&lt;img src="{static logo.png}" /&gt;
+		&lt;img src="<span class="var">&#123;static logo.png&#125;</span>" /&gt;
+	</div>
+	<br />
+	You can also change the path to static directory as follows: 
+	<div class="code">
+		$template->setStaticDir("assets/files/staticfiles");
 	</div>
 	</dd>
 </dl>
