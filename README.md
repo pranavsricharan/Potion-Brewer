@@ -10,8 +10,9 @@ A PHP templating engine
 	
 	Example:<br />
 	<code>
-		$template = new Potion(PATH_TO_TEMPLATE);<br />
-		$template->set("title","My page title");<br />
+		$template = new Potion(PATH_TO_TEMPLATE);<br /><br />
+		
+		$template->set("title","My page title");<br /><br />
 		$template->set("sitename","My website");
 	</code>
 	</dd>
@@ -20,7 +21,7 @@ A PHP templating engine
 	<code>
 		&lt;html&gt;<br />
 	&lt;head&gt;<br />
-		&lt;title&gt; &#123;title&#125; &lt;/title&gt;</code>
+		&lt;title&gt; &#123;title&#125; &lt;/title&gt;
 	&lt;/head&gt;
 	
 	
@@ -29,7 +30,7 @@ A PHP templating engine
 	&lt;/body&gt;<br />
 	
 &lt;/html&gt;
-	
+	</code>
 	</dd>
 	<dt>Static files</dt>
 	<dd>Static files such as images, scripts and css can be included using the static keyword.<br />
@@ -37,7 +38,7 @@ A PHP templating engine
 		&lt;img src="&#123;static logo.png&#125;" /&gt;
 	</code>
 	<br />
-	You can also change the path to static directory as follows: 
+	You can also change the path to static directory as follows: <br />
 	<code>
 		$template->setStaticDir("assets/files/staticfiles");
 	</code>
